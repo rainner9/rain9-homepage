@@ -25,7 +25,8 @@ body {
     right: 0;
     bottom: 0;
     left: 0;
-    width: 400px;
+    width: 100%;
+    max-width: 400px;
     height: 700px;
     border-radius: 15px;
     background: rgba(0, 0, 0, 0.2);
@@ -217,4 +218,46 @@ img {
 .footer i {
     color: red;
     margin-left: 5px;
+}
+
+@media (max-width: 1024px) {
+    .card {
+        width: 80%;
+        height: auto;
+    }
+
+    .avatar-holder {
+        width: 120px;
+        height: 120px;
+    }
+
+    .username {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .card {
+        width: 90%;
+        height: auto;
+        padding-bottom: 20px;
+    }
+
+    .avatar-holder {
+        width: 100px;
+        height: 100px;
+    }
+
+    .username {
+        font-size: 1.2rem;
+    }
+
+    .link-button {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .footer {
+        font-size: 12px;
+    }
 }
