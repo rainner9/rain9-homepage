@@ -1,0 +1,23 @@
+.splash {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 60px;
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+    transition: transform 1s ease-in-out;
+    z-index: 1000;
+}
+
+.splash.hide {
+    transform: translateY(-100%);
+}
+
+.highlight {
+    color: #ADB2D4;
+}

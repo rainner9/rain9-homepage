@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rain9 | homepage</title>
+    <link rel="stylesheet" href="Assets/CSS/style.css">
+    <link rel="stylesheet" href="Assets/CSS/splash.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+    <audio id="bgMusic" style="display: none;" muted>
+        <source src="Assets/SFX/Opening.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+
+    <div class="splash">
+        <h1>Hello, I am <span class="highlight">rain9</span></h1>
+    </div>
+
+    <div class="card" id="mainCard">
+        <div class="ds-top"></div>
+        <div class="avatar-holder">
+            <img src="Assets/IMAGE/alya.jpg" alt="Albert Einstein">
+        </div>
+        <div class="username">rain9</div>
+        <div class="links">
+            <a href="https://yourwebsite.com" class="link-button">
+                <i class="fa-solid fa-globe"></i> Website
+                <i class="fa-solid fa-chevron-right"></i>
+            </a>
+            <a href="https://wakatime.com/@rain9" class="link-button">
+                <i class="fa-solid fa-chart-line"></i> WakaTime Stats
+                <i class="fa-solid fa-chevron-right"></i>
+            </a>
+            <a href="https://github.com/rainner9" class="link-button">
+                <i class="fa-brands fa-github"></i> GitHub Profile
+                <i class="fa-solid fa-chevron-right"></i>
+            </a>
+            <a href="https://open.spotify.com/user/2sqedz98t0t3e2vtbvo2646vs" class="link-button">
+                <i class="fa-brands fa-spotify"></i> Spotify Profile
+                <i class="fa-solid fa-chevron-right"></i>
+            </a>
+            <a href="https://steamcommunity.com/profiles/76561197969319335/" class="link-button">
+                <i class="fa-brands fa-steam"></i> Steam Profile
+                <i class="fa-solid fa-chevron-right"></i>
+            </a>
+            <a href="https://osu.ppy.sh/users/25562450" class="link-button">
+                <i class="fa-solid fa-music"></i> Osu! Profile
+                <i class="fa-solid fa-chevron-right"></i>
+            </a>
+        </div>
+        <div class="footer">
+            @2025 Made by <span>rain9</span> with <i>❤️</i>
+        </div>
+    </div>
+
+    <script>
+        let splash = document.querySelector(".splash");
+        let music = document.getElementById("bgMusic");
+
+        music.muted = false;
+        let playPromise = music.play();
+        if (playPromise !== undefined) {
+            playPromise.catch(error => console.log("Autoplay gagal:", error));
+        }
+
+        setTimeout(() => {
+            splash.classList.add("hide");
+            setTimeout(() => {
+                document.getElementById("mainCard").style.display = "block";
+            }, 1000);
+        }, 3000);
+    </script>
+</body>
+
+</html>
