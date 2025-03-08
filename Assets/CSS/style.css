@@ -223,7 +223,6 @@ img {
 @media (max-width: 1024px) {
     .card {
         width: 80%;
-        height: auto;
     }
 
     .avatar-holder {
