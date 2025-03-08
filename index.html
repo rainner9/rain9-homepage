@@ -61,6 +61,14 @@
         <div class="footer">
             @2025 Made by <span>rain9</span> with <i>❤️</i>
         </div>
+
+        <div id="notification" class="notification-card">
+            <p id="notif-text"></p>
+        </div>
+
+        <audio id="notifSound">
+            <source src="../SFX/Notification.mp3" type="audio/mp3">
+        </audio>
     </div>
 
     <script>
@@ -70,7 +78,7 @@
         music.muted = false;
         let playPromise = music.play();
         if (playPromise !== undefined) {
-            playPromise.catch(error => console.log("Autoplay gagal:", error));
+            playPromise.catch(error => console.log("Autoplay error:", error));
         }
 
         setTimeout(() => {
@@ -79,6 +87,30 @@
                 document.getElementById("mainCard").style.display = "block";
             }, 1000);
         }, 3000);
+
+        let notification = document.getElementById("notification");
+        let notifSound = document.getElementById("notifSound");
+        let notifText = document.getElementById("notif-text");
+        let notifMessages = [
+            "This is homepage you can check my website",
+            "Don't forget to check my stats, profile, etc"
+        ];
+        let notifIndex = 0;
+
+        function showNotification() {
+            notifText.innerText = notifMessages[notifIndex];
+            notifIndex = (notifIndex + 1) % notifMessages.length;
+            notifSound.play();
+            notification.classList.add("show");
+            notification.classList.remove("hide");
+
+            setTimeout(() => {
+                notification.classList.add("hide");
+                notification.classList.remove("show");
+            }, 4000);
+        }
+
+        setInterval(showNotification, 5000);
     </script>
 </body>
 
