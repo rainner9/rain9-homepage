@@ -238,8 +238,8 @@ img {
 @media (max-width: 600px) {
     .card {
         width: 90%;
-        height: 500px;
-        padding-bottom: 20px;
+        height: 700px;
+        
     }
 
     .avatar-holder {
